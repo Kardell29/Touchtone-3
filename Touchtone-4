@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Twin Cities Animal Rescue helps animals find safe, loving homes. Learn about our mission and volunteer opportunities.">
+  <title>Twin Cities Animal Rescue</title>
+
+  <style>
+    :root {
+      --green: #205b43;
+      --green-dark: #16432f;
+      --light: #f3f7f4;
+      --text: #203329;
+      --white: #ffffff;
+      --border: #d5e0d8;
+      --error: #a32020;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 1rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--light);
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 1.25rem 5%;
+    }
+
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      margin: 0 0 0.75rem;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+    }
+
+    nav ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 5%;
+    }
+
+    section {
+      margin-bottom: 2rem;
+      scroll-margin-top: 1rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: clamp(1.25rem, 4vw, 3rem);
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 5px 20px #173c2b12;
+    }
+
+    .hero h2 {
+      margin-top: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .hero-art {
+      display: grid;
+      place-items: center;
+      min-height: 250px;
+      border-radius: 12px;
+      background: #e1eee5;
+      font-size: clamp(4rem, 10vw, 7rem);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.75rem 1.1rem;
+      border: 0;
+      border-radius: 7px;
+      background: var(--green);
+      color: white;
+      font: inherit;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--green-dark);
+    }
+
+    .section-heading {
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      padding: 1.4rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--green);
+    }
+
+    .role-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .status {
+      min-height: 1.5rem;
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    form {
+      display: grid;
+      gap: 0.5rem;
+      max-width: 650px;
+    }
+
+    label {
+      margin-top: 0.6rem;
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #9cac9f;
+      border-radius: 6px;
+      background: white;
+      color: var(--text);
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid var(--green);
+      outline-offset: 2px;
+    }
+
+    .error {
+      min-height: 1.25rem;
+      color: var(--error);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      padding: 1.5rem 5%;
+      background: var(--green-dark);
+      color: white;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-art {
+        min-height: 170px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <h1>Twin Cities Animal Rescue</h1>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#volunteer">Volunteer</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Home -->
+    <section class="hero" id="home">
+      <div>
+        <h2>Every animal deserves a loving home.</h2>
+        <p>
+          We rescue, rehabilitate, and rehome at-risk animals
+          while providing support to our community.
+        </p>
+        <a class="button" href="#volunteer">Get Involved</a>
+      </div>
+
+      <div class="hero-art" role="img"
+           aria-label="Illustrations of a dog and cat">
+        🐶 🐱
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2 class="section-heading">Our Services</h2>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Animal Rescue</h3>
+          <p>
+            We help animals in need and work toward placing
+            them in safe, caring environments.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Foster Programs</h3>
+          <p>
+            Foster volunteers provide temporary homes and
+            care while animals wait for adoption.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Community Support</h3>
+          <p>
+            We encourage responsible pet ownership and
+            connect community members with ways to help.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="card">
+      <h2>About Our Mission</h2>
+      <p>
+        Twin Cities Animal Rescue is dedicated to helping
+        vulnerable animals receive care and find loving homes.
+        Our mission is to make a positive difference through
+        rescue, fostering, adoption, and community involvement.
+      </p>
+
+      <h3>How You Can Help</h3>
+      <p>
+        You can support our mission by fostering an animal,
+        volunteering your time, helping at events, or donating
+        to a verified animal welfare organization.
+      </p>
+    </section>
+
+    <!-- Volunteer -->
+    <section id="volunteer" class="card">
+      <h2>Volunteer With Us</h2>
+      <p>Select a role to save your interest and pre-fill the
+        volunteer interest field on the contact form.</p>
+
+      <div class="role-buttons">
+        <button class="button" type="button"
+                data-role="foster">Foster</button>
+
+        <button class="button" type="button"
+                data-role="walker">Dog Walker</button>
+
+        <button class="button" type="button"
+                data-role="event">Event Helper</button>
+      </div>
+
+      <p id="role-status" class="status"
+         role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="card">
+      <h2>Contact Us</h2>
+      <p>
+        Fill out the form below to check your inquiry.
+        This demonstration does not send information to a server.
+      </p>
+
+      <form id="contact-form" novalidate>
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          autocomplete="name"
+          required
+        >
+        <div id="name-error" class="error"
+             aria-live="polite"></div>
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="email"
+          required
+        >
+        <div id="email-error" class="error"
+             aria-live="polite"></div>
+
+        <label for="interest-type">Volunteer Interest</label>
+        <select id="interest-type" name="interest">
+          <option value="">Choose a role</option>
+          <option value="foster">Foster</option>
+          <option value="walker">Dog Walker</option>
+          <option value="event">Event Helper</option>
+        </select>
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="5"
+          placeholder="Tell us how you would like to help..."
+        ></textarea>
+
+        <button class="button" type="submit">
+          Check Inquiry
+        </button>
+
+        <p id="form-status" class="status"
+           role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; <span id="year"></span> Twin Cities Animal Rescue
+    </p>
+  </footer>
+
+  <script>
+    "use strict";
+
+    const volunteerRoles = [
+      { id: "foster", name: "Foster" },
+      { id: "walker", name: "Dog Walker" },
+      { id: "event", name: "Event Helper" }
+    ];
+
+    // Save a volunteer role in browser storage.
+    function saveInterest(roleId) {
+      const role = volunteerRoles.find(
+        item => item.id === roleId
+      );
+
+      if (!role) return;
+
+      const select = document.getElementById("interest-type");
+      const status = document.getElementById("role-status");
+
+      // Select the role even if storage is unavailable.
+      select.value = roleId;
+
+      try {
+        localStorage.setItem("selectedRole", roleId);
+        status.textContent =
+          role.name + " interest saved. Complete the form below.";
+      } catch (error) {
+        status.textContent =
+          "Role selected. Browser storage is unavailable.";
+      }
+    }
+
+    // Restore the saved role when the page loads.
+    function applySavedInterest() {
+      try {
+        const savedRole = localStorage.getItem("selectedRole");
+
+        const roleExists = volunteerRoles.some(
+          role => role.id === savedRole
+        );
+
+        if (roleExists) {
+          document.getElementById("interest-type").value =
+            savedRole;
+        }
+      } catch (error) {
+        // The form remains usable if storage is blocked.
+      }
+    }
+
+    // Check the name and email before accepting the form.
+    function validateForm(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name")
+        .value.trim();
+
+      const email = document.getElementById("email")
+        .value.trim();
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const nameError = document.getElementById("name-error");
+      const emailError = document.getElementById("email-error");
+      const formStatus = document.getElementById("form-status");
+
+      nameError.textContent = "";
+      emailError.textContent = "";
+      formStatus.textContent = "";
+
+      let isValid = true;
+
+      if (name.length < 2) {
+        nameError.textContent =
+          "Please enter a name with at least 2 characters.";
+        isValid = false;
+      }
+
+      if (!emailRegex.test(email)) {
+        emailError.textContent =
+          "Please enter a valid email address.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        formStatus.textContent =
+          "Your form passed validation. This demo does not send " +
+          "your inquiry; a backend is needed for submission.";
+      }
+    }
+
+    // Set up the website after the HTML has loaded.
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+      applySavedInterest();
+
+      document.querySelectorAll("[data-role]").forEach(button => {
+        button.addEventListener("click", () => {
+          saveInterest(button.dataset.role);
+        });
+      });
+
+      document.getElementById("contact-form")
+        .addEventListener("submit", validateForm);
+    });
+  </script>
+</body>
+</html>
